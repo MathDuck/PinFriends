@@ -1,0 +1,53 @@
+name: Build against Vencord
+
+on:
+  push:
+  pull_request:
+  schedule:
+    # Weekly: catches Vencord API changes that break the plugin
+    - cron: "0 6 * * 1"
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout plugin
+        uses: actions/checkout@v4
+
+      - name: Checkout Vencord
+        uses: actions/checkout@v4
+        with:
+          repository: Vendicated/Vencord
+          path: Vencord
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: Vencord/package.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: Vencord/pnpm-lock.yaml
+
+      - name: Copy plugin into Vencord
+        shell: bash
+        run: |
+          mkdir -p Vencord/src/userplugins/pinFriends
+          cp -R src/pinFriends/. Vencord/src/userplugins/pinFriends/
+
+      - name: Install
+        working-directory: Vencord
+        run: pnpm install --frozen-lockfile
+
+      - name: Type-check
+        working-directory: Vencord
+        run: pnpm testTsc
+
+      - name: Build
+        working-directory: Vencord
+        run: pnpm build

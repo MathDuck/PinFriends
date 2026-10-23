@@ -1,0 +1,4 @@
+# Local Vencord clone used by the install scripts
+/Vencord/
+node_modules/
+*.zip
