@@ -1,5 +1,7 @@
 # PinFriends
 
+[![Build against Vencord](https://github.com/MathDuck/PinFriends/actions/workflows/build.yml/badge.svg)](https://github.com/MathDuck/PinFriends/actions/workflows/build.yml)
+
 **English** · [Français](#français)
 
 A [Vencord](https://github.com/Vendicated/Vencord) userplugin that pins your best friends to the top of your Discord friends list.
@@ -14,15 +16,30 @@ Pins are stored per account in the plugin settings.
 
 > **Not affiliated with Discord or Vencord.** Client mods can go against Discord's Terms of Service. Use at your own risk.
 
+## Preview
+
+<p>
+  <img src="docs/side-panel.png" alt="Side friends panel with a Pinned section" width="260">
+  &nbsp;
+  <img src="docs/context-menu.png" alt="Right-click menu with the pin entry" width="230">
+</p>
+<p>
+  <img src="docs/friends-tab.png" alt="Friends tab with pin icons left of the message button" width="620">
+</p>
+
+*Mock-ups with fictional users, not real screenshots.*
+
 ## Install
 
 Vencord has no store for custom plugins: the plugin is copied into a local Vencord clone, which you then build. The scripts do all of it.
 
 **Requirements:** Git, Node.js 22+, pnpm (`npm install -g pnpm`).
 
+You can also download the zip from the [Releases](https://github.com/MathDuck/PinFriends/releases) page instead of cloning.
+
 ```sh
-git clone https://github.com/<your-username>/vencord-pinfriends.git
-cd vencord-pinfriends
+git clone https://github.com/MathDuck/PinFriends.git
+cd PinFriends
 ```
 
 **Windows (PowerShell)**
@@ -113,15 +130,30 @@ Les épingles sont enregistrées par compte dans les réglages du plugin.
 
 > **Sans lien avec Discord ni Vencord.** Les mods de client peuvent aller à l'encontre des conditions d'utilisation de Discord. À utiliser à tes risques.
 
+## Aperçu
+
+<p>
+  <img src="docs/side-panel.png" alt="Panneau d'amis latéral avec une section Épinglés" width="260">
+  &nbsp;
+  <img src="docs/context-menu.png" alt="Menu clic droit avec l'entrée d'épinglage" width="230">
+</p>
+<p>
+  <img src="docs/friends-tab.png" alt="Onglet Amis avec des épingles à gauche du bouton de message" width="620">
+</p>
+
+*Maquettes avec des utilisateurs fictifs, pas de vraies captures d'écran. Les textes suivent l'option de langue du plugin.*
+
 ## Installation
 
 Vencord n'a pas de boutique pour les plugins perso : le plugin est copié dans un clone local de Vencord, que tu compiles ensuite. Les scripts font tout.
 
 **Prérequis :** Git, Node.js 22+, pnpm (`npm install -g pnpm`).
 
+Tu peux aussi télécharger le zip depuis la page [Releases](https://github.com/MathDuck/PinFriends/releases) au lieu de cloner.
+
 ```sh
-git clone https://github.com/<your-username>/vencord-pinfriends.git
-cd vencord-pinfriends
+git clone https://github.com/MathDuck/PinFriends.git
+cd PinFriends
 ```
 
 **Windows (PowerShell)**

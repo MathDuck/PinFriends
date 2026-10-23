@@ -99,9 +99,10 @@ function wrapComparator(cmp: any) {
     };
 }
 
-function PinIcon({ size = 18 }: { size?: number; }) {
+// Also used as a menu icon: Discord passes { width, height, className } to it
+function PinIcon({ size = 18, width, height, className }: { size?: number; width?: number; height?: number; className?: string; }) {
     return (
-        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <svg className={className} width={width ?? size} height={height ?? size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path
                 fill="currentColor"
                 d="M19.38 4.62 15.2.44a1 1 0 0 0-1.6.3l-1.2 3.15-4.02 2.3a1 1 0 0 0-.23.17L5.3 8.8a1 1 0 0 0 0 1.41l3.2 3.2-5.2 5.2a1 1 0 1 0 1.41 1.42l5.2-5.2 3.2 3.2a1 1 0 0 0 1.4 0l2.45-2.45c.07-.07.13-.15.18-.23l2.3-4.02 3.15-1.2a1 1 0 0 0 .3-1.6l-4.21-4.2Z"
@@ -152,7 +153,8 @@ const UserContextPatch: NavContextMenuPatchCallback = (children, { user }: { use
         <Menu.MenuItem
             id="vc-pinfriends-toggle"
             label={t(isPinned(user.id) ? "unpin" : "pin")}
-            icon={() => <PinIcon />}
+            // Icon on the right of the label, like CopyStickerLinks' trailing arrow
+            trailingIndicator={{ type: "icon", icon: PinIcon }}
             action={() => togglePin(user.id)}
         />
     );
@@ -171,7 +173,7 @@ export default definePlugin({
     name: "PinFriends",
     description: "Pin your best friends to the top of your friends list (right-click a friend).",
     tags: ["Friends", "Organisation"],
-    authors: [{ name: "MathDuck", id: 0n }],
+    authors: [{ name: "MathDuck", id: 177064875661590528n }],
     settings,
 
     contextMenus: {
