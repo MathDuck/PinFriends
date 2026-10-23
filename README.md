@@ -9,7 +9,7 @@ A [Vencord](https://github.com/Vendicated/Vencord) userplugin that pins your bes
 - Right-click a friend: **Pin as best friend** / **Remove from best friends**.
 - **Friends tab**: pinned friends come first, in pin order. Everyone else keeps the sort you picked.
 - **Side friends panel** (the one you can open from anywhere): pinned friends get their own **Pinned** section at the top, whatever the sort (Online / Game / Alphabetical).
-- A small pin icon shows left of the message button on pinned friends' rows in the Friends tab.
+- A small pin icon marks pinned friends in the Friends tab, just left of the message button.
 - **Language** option in the plugin settings: English or Français.
 
 Pins are stored per account in the plugin settings.
@@ -123,7 +123,7 @@ Un userplugin [Vencord](https://github.com/Vendicated/Vencord) qui épingle tes 
 - Clic droit sur un ami : **Épingler en meilleur ami** / **Retirer des meilleurs amis**.
 - **Onglet Amis** : les amis épinglés passent en premier, dans l'ordre d'épinglage. Les autres gardent le tri choisi.
 - **Panneau d'amis latéral** (celui qu'on peut ouvrir partout) : les amis épinglés ont leur propre section **Épinglés** tout en haut, quel que soit le tri (En ligne / Jeu / Alphabétique).
-- Une petite épingle s'affiche à gauche du bouton de message sur la ligne des amis épinglés de l'onglet Amis.
+- Une petite épingle marque les amis épinglés dans l'onglet Amis, juste à gauche du bouton de message.
 - Option **Langue** dans les réglages du plugin : English ou Français.
 
 Les épingles sont enregistrées par compte dans les réglages du plugin.
