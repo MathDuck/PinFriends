@@ -81,6 +81,7 @@ Then restart Discord and enable **PinFriends** in Settings > Vencord > Plugins.
 - **PowerShell says the script is not digitally signed.** Run it with `-ExecutionPolicy Bypass` as shown above, or run `Unblock-File .\scripts\install.ps1` first.
 - **"Failed to kill Discord: Access is denied".** Quit Discord from the tray icon, then run the install again.
 - **A feature stopped working after a Discord update.** The plugin patches Discord's minified code, which changes with updates. Open DevTools (`Ctrl+Shift+I`), filter the console on `PinFriends`: a "Patch by PinFriends had no effect" message tells you which patch broke. Open an issue with that message.
+- **Discord no longer launches after an update, or Vencord logs startup errors.** PinFriends may not be the cause. Update the local Vencord clone, then rebuild and inject with `powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Update`.
 - **`pnpm` warns about its version.** Harmless: Vencord pins a pnpm version, newer ones still work.
 
 ## How it works
@@ -195,6 +196,7 @@ Relance ensuite Discord et active **PinFriends** dans Paramètres > Vencord > Pl
 - **PowerShell dit que le script n'est pas signé numériquement.** Lance-le avec `-ExecutionPolicy Bypass` comme ci-dessus, ou exécute d'abord `Unblock-File .\scripts\install.ps1`.
 - **« Failed to kill Discord: Access is denied ».** Quitte Discord depuis l'icône de la zone de notification, puis relance l'installation.
 - **Une fonction ne marche plus après une mise à jour de Discord.** Le plugin patche le code minifié de Discord, qui change à chaque mise à jour. Ouvre les DevTools (`Ctrl+Maj+I`), filtre la console sur `PinFriends` : un message « Patch by PinFriends had no effect » indique quel patch est cassé. Ouvre une issue avec ce message.
+- **Discord ne se lance plus après une mise à jour, ou Vencord signale des erreurs au démarrage.** PinFriends n'est peut-être pas en cause. Mets à jour le clone local de Vencord, puis reconstruis et réinjecte avec `powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Update`.
 - **`pnpm` avertit sur sa version.** Sans conséquence : Vencord fixe une version de pnpm, les plus récentes fonctionnent.
 
 ## Fonctionnement
