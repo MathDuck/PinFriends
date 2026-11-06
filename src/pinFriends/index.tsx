@@ -19,8 +19,8 @@ const settings = definePluginSettings({
         type: OptionType.SELECT,
         description: "Language / Langue",
         options: [
-            { label: "English", value: "en", default: true },
-            { label: "Français", value: "fr" }
+            { label: "Français", value: "fr", default: true },
+            { label: "English", value: "en" }
         ]
     },
     // { [currentUserId]: [friendId, ...] }, array order = display order
