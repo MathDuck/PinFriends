@@ -16,19 +16,19 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout plugin
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Checkout Vencord
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: Vendicated/Vencord
           path: Vencord
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
           package_json_file: Vencord/package.json
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: pnpm
@@ -46,7 +46,7 @@ jobs:
 
       - name: Type-check
         working-directory: Vencord
-        run: pnpm testTsc
+        run: pnpm test:ts
 
       - name: Build
         working-directory: Vencord
